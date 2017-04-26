@@ -1,9 +1,3 @@
-<!-- 
-Ketao Yin
-CS 4750
-navbar.php
--->
-
 <?php
     session_start();
 ?>
@@ -19,7 +13,7 @@ navbar.php
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="./index.php">DASHSHOP</a>
+            <a class="navbar-brand" href="./index.php">PokemonDB</a>
         </div>
 
     <?php

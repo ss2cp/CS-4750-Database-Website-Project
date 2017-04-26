@@ -1,8 +1,3 @@
-<!--
-Ketao Yin
-CS 4750
-home.php
--->
 <?php
    ob_start();
    session_start();
@@ -16,7 +11,7 @@ home.php
 <html lang = "en">
    
    <head>
-      <title>DashShop Login Page</title>
+      <title>PokemonDB Login Page</title>
       <link href = "css/bootstrap.min.css" rel = "stylesheet">
       
       <style>

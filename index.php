@@ -1,9 +1,3 @@
-<!--
-Ketao Yin
-CS 4750
-index.php
--->
-
 <!DOCTYPE html>
 <html lang="en">
 

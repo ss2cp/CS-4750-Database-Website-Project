@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PokemonDB - Pokemon</title>
+    <title>PokemonDB - Pokemons</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -67,24 +67,26 @@
                             echo "Failed to connect to MySQL: " . mysqli_connect_error();
                         }
 
-                        $query = "SELECT `id`, `name`, `image`, `type1` FROM `pokemon` 
-                        #WHERE `dept_id` =  \"D00000\"";
+                        $query = "SELECT `id`, `name`, `image`, `type1`,`type2` FROM `pokemon` ";
                         $result = mysqli_query($conn, $query);
 
                         while ($row = $result->fetch_assoc()) {
-                            $productName = $row["name"];
-                            $price = $row["id"];
+                            $name = $row["name"];
+                            $id = $row["id"];
                             $imageURL = $row["image"];
-                            $productURL = "./product_page.php"."?product_id=".$row["name"];     // used to create product page
+                            $type1 = $row["type1"];
+                            $type2 = $row["type2"];
+                         
+                            // $productURL = "./product_page.php"."?product_id=".$row["name"];     // used to create product page
 
                             echo "<div class=\"col-sm-4 col-lg-4 col-md-4\">
                                     <div class=\"thumbnail\">
-                                        <img src=\"$imageURL\" alt=\"\" style=\"width: auto; max-height: 200px\" >
+                                        <img src=\"$imageURL\" alt=\"$name\" style=\"width: auto; max-height: 200px\" >
                                         <div class=\"text\">
-                                            <h4><a href=\"$productURL\">$productName</a></h4>
+                                            <h4>$id - $name</h4>
                                         </div>
                                         <div class=\"caption\">
-                                            <h4 class=\"pull-left\">$price</h4>
+                                            <h4 class=\"pull-left\">$type1 $type2</h4>
                                         </div>
                                     </div>
                                 </div>";

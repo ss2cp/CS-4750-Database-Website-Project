@@ -1,9 +1,3 @@
-<!--
-Ketao Yin
-CS 4750
-item_added.php
--->
-
 <?php
    session_start();
 ?>
