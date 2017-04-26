@@ -1,9 +1,3 @@
-<!--
-Ketao Yin
-CS 4750
-member_signup.php
--->
-
 <?php
    session_start();
 ?>

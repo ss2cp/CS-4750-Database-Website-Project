@@ -1,9 +1,3 @@
-<!-- 
-Ketao Yin
-CS 4750
-navbar.php
--->
-
 <?php
     session_start();
 ?>

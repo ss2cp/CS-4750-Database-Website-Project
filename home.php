@@ -1,8 +1,3 @@
-<!--
-Ketao Yin
-CS 4750
-home.php
--->
 <?php
    ob_start();
    session_start();
