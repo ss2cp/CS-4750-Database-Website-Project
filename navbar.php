@@ -14,6 +14,8 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="./index.php">PokemonDB</a>
+            <a class="navbar-brand" href="download.xml" download>Export</a>
+
         </div>
 
     <?php
