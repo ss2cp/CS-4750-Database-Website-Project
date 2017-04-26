@@ -1,9 +1,3 @@
-<!--
-Ketao Yin
-CS 4750
-dept_beauty.php
--->
-
 <!DOCTYPE html>
 <html lang="en">
 

@@ -1,9 +1,3 @@
-<!--
-Ketao Yin
-CS 4750
-login.php
--->
-
 <html lang="en">
 <head>
     <meta charset="utf-8">
