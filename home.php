@@ -11,7 +11,7 @@
 <html lang = "en">
    
    <head>
-      <title>DashShop Login Page</title>
+      <title>PokemonDB Login Page</title>
       <link href = "css/bootstrap.min.css" rel = "stylesheet">
       
       <style>

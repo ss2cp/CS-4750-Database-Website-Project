@@ -45,47 +45,47 @@
 
             <div class="col-md-4 col-sm-6">
                 <a href="./pokemon.php">
-                    <img class="img-responsive img-rounded" src="./assets/homepage/books.JPG" alt="" width="700" height="450">
+                    <img class="img-responsive img-rounded" src="./assets/homepage/pokemon.png" alt="" width="700" height="450">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="./dept_movies.php">
-                    <img class="img-responsive img-rounded" src="./assets/homepage/movies.JPG" alt="" width="700" height="450">
+                    <img class="img-responsive img-rounded" src="./assets/homepage/types.png" alt="" width="700" height="450">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="./dept_home.php">
-                    <img class="img-responsive img-rounded" src="./assets/homepage/home.JPG" alt="" width="700" height="450">
+                    <img class="img-responsive img-rounded" src="./assets/homepage/pokeballs.png" alt="" width="700" height="450">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="./dept_electronics.php">
-                    <img class="img-responsive img-rounded" src="./assets/homepage/electronics.JPG" alt="" width="700" height="450">
+                    <img class="img-responsive img-rounded" src="./assets/homepage/gyms.png" alt="" width="700" height="450">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="./potion.php">
-                    <img class="img-responsive img-rounded" src="./assets/homepage/beauty.JPG" alt="" width="700" height="450">
+                    <img class="img-responsive img-rounded" src="./assets/homepage/pokemondb.png" alt="" width="700" height="450">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="./dept_shoes.php">
-                    <img class="img-responsive img-rounded" src="./assets/homepage/shoes.JPG" alt="" width="700" height="450">
+                    <img class="img-responsive img-rounded" src="./assets/homepage/regions.png" alt="" width="700" height="450">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="./dept_computers.php">
-                    <img class="img-responsive img-rounded" src="./assets/homepage/computers.JPG" alt="" width="700" height="450">
+                    <img class="img-responsive img-rounded" src="./assets/homepage/games.png" alt="" width="700" height="450">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="./dept_handmade.php">
-                    <img class="img-responsive img-rounded" src="./assets/homepage/handmade.JPG" alt="" width="700" height="450">
+                    <img class="img-responsive img-rounded" src="./assets/homepage/leaders.png" alt="" width="700" height="450">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="./dept_cellphones.php">
-                    <img class="img-responsive img-rounded" src="./assets/homepage/cellphones.JPG" alt="" width="700" height="450">
+                    <img class="img-responsive img-rounded" src="./assets/homepage/potions.png" alt="" width="700" height="450">
                 </a>
             </div>
         </div>

@@ -42,7 +42,7 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
            </button>
-           <a class="navbar-brand" href="./index.php">DASHSHOP</a>
+           <a class="navbar-brand" href="./index.php">PokemonDB</a>
        </div>
      <!-- /.navbar-collapse -->
      </div>
