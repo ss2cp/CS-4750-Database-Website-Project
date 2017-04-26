@@ -19,6 +19,26 @@
                             echo "Failed to connect to MySQL: " . mysqli_connect_error();
                         }
                         //$query = "SELECT `id`, `name`, `image`, `type1`,`type2`,`strength` FROM `pokemon` INNER JOIN `pokemon_type_strength` ON (nameType = type1) GROUP BY 1";
+                        
+
+                        /*$query = "
+                        SELECT 
+                        p.id,
+                        p.name,
+                        p.image,
+                        p.type1,
+                        p.type2,
+                        ps.strength,
+                        pw.weakness,
+                        pe.after_id
+                        FROM pokemon AS p
+                        INNER JOIN pokemon_type_strength AS ps ON p.type1 = ps.nameType 
+                        INNER JOIN pokemon_type_weakness AS pw on p.type1 = pw.nameType
+                        LEFT OUTER JOIN pokemon_evolution as pe on p.id = pe.before_id
+                        GROUP BY p.id
+                        ";*/
+
+
                         $query = "
                         SELECT 
                         p.id,
@@ -27,18 +47,20 @@
                         p.type1,
                         p.type2,
                         ps.strength,
-                        pw.weakness
+                        pw.weakness,
+                        pe.after_id
                         FROM pokemon AS p
-                        INNER JOIN pokemon_type_strength AS ps ON p.type1 = ps.nameType 
-                        INNER JOIN pokemon_type_weakness AS pw on p.type1 = pw.nameType
-                        WHERE p.id IN (
-                            SELECT before_id
-                            FROM pokemon_evolution
-                            )
-                         GROUP BY p.id";
-                        $result = mysqli_query($conn, $query);
-                        
+                        LEFT OUTER JOIN pokemon_type_strength AS ps ON p.type1 = ps.nameType 
+                        LEFT OUTER JOIN pokemon_type_weakness AS pw on p.type1 = pw.nameType
+                        LEFT OUTER JOIN pokemon_evolution as pe on p.id = pe.before_id
+                        GROUP BY p.id
+                        ";
 
+
+
+
+
+                        $result = mysqli_query($conn, $query);
 
 
                         while ($row = $result->fetch_assoc()) {
@@ -49,7 +71,9 @@
                             $type2 = $row["type2"];
                             $strength1 = $row["strength"];
                             $weakness1 = $row["weakness"];
-                            $evolution = $row["after_id"];
+                            if($row["after_id"] != null){
+                                $evolution2 = $row["after_id"];
+                            }
                          
                             // $productURL = "./product_page.php"."?product_id=".$row["name"];     // used to create product page
 
@@ -62,8 +86,12 @@
                                         <div class=\"caption\">
                                             <h4 class=\"pull-left\">Type: <a href=\"type.php\"> $type1 $type2 </a><br/><br/>Strength: $strength1
                                                 <br/>Weakness: $weakness1 
-                                                <br/>Next Evolution ID: $evolution
-                                            </h4>
+                                                ";
+                                                if($row["after_id"] != null and $row["after_id"] != $id){
+                                                    echo "<br/>Evolution: $evolution2";
+                                                }
+                                                echo
+                                            "</h4>
                                         </div>
                                     </div>
                                 </div>";
