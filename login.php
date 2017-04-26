@@ -55,11 +55,11 @@
         <div class="form-group">
             <label for="userName" class="col-sm-2">User Name</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="userName" id="userName" placeholder="username">
+                <input type="text" class="form-control" name="userName" id="userName" placeholder="username" required>
             </div>
             <label for="password" class="col-sm-2">Password</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="password" id="password" placeholder="password">
+                <input type="text" class="form-control" name="password" id="password" placeholder="password" required>
             </div>
         </div>
 
