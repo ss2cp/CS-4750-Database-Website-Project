@@ -88,7 +88,9 @@
                         }
 
                         $query = "SELECT `id`, `name`, `image`, `type1`,`type2`,`strength` FROM `pokemon` INNER JOIN `pokemon_type_strength` ON (nameType = type1) GROUP BY 1";
+                        $query2 = "SELECT `id`, `name`, `image`, `type1`,`type2`,`weakness` FROM `pokemon` INNER JOIN `pokemon_type_weakness` ON (nameType = type1) GROUP BY 1";
                         $result = mysqli_query($conn, $query);
+                        $result2 = mysqli_query($conn, $query2);
 
 
 
