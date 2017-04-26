@@ -81,7 +81,7 @@ dept_books.php
                             $productName = $row["name"];
                             $price = $row["id"];
                             $imageURL = $row["image"];
-                            $productURL = "./product_page.php"."?product_id=".$row["product_id"];     // used to create product page
+                            $productURL = "./product_page.php"."?product_id=".$row["name"];     // used to create product page
 
                             echo "<div class=\"col-sm-4 col-lg-4 col-md-4\">
                                     <div class=\"thumbnail\">
