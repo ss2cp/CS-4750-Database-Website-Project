@@ -72,8 +72,8 @@
                         $result = mysqli_query($conn, $query);
 
                         while ($row = $result->fetch_assoc()) {
-                            $productName = $row["name"];
-                            $price = $row["id"];
+                            $name = $row["name"];
+                            $id = $row["id"];
                             $imageURL = $row["image"];
                             $productURL = "./product_page.php"."?product_id=".$row["name"];     // used to create product page
 
@@ -81,10 +81,10 @@
                                     <div class=\"thumbnail\">
                                         <img src=\"$imageURL\" alt=\"\" style=\"width: auto; max-height: 200px\" >
                                         <div class=\"text\">
-                                            <h4><a href=\"$productURL\">$productName</a></h4>
+                                            <h4><a href=\"$productURL\">$name</a></h4>
                                         </div>
                                         <div class=\"caption\">
-                                            <h4 class=\"pull-left\">$price</h4>
+                                            <h4 class=\"pull-left\">$id</h4>
                                         </div>
                                     </div>
                                 </div>";
