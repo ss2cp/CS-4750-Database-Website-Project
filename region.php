@@ -67,26 +67,22 @@
                             echo "Failed to connect to MySQL: " . mysqli_connect_error();
                         }
 
-                        $query = "SELECT `nameBall`, `catchRate`, `priceBall`, `image` FROM `pokemon_ball` 
+                        $query = "SELECT `region`, `generation`, `image`  FROM `pokemon_region` 
                         #WHERE `dept_id` =  \"D00000\"";
                         $result = mysqli_query($conn, $query);
 
                         while ($row = $result->fetch_assoc()) {
-                            $ballName = $row["nameBall"];
-                            $price = $row["priceBall"];
-                            $catchDescript = $row["catchRate"];
-                            $imageURL = $row["image"];
+                            $regionName = $row["region"];
+                            $generation = $row["generation"];
+                            $imageURL = $row["image"];                                              
                             // $productURL = "./product_page.php"."?product_id=".$row["name"];     // used to create product page
 // <h4><a href=\"$productURL\">$ballName</a></h4>
                             echo "<div class=\"col-sm-4 col-lg-4 col-md-4\">
                                     <div class=\"thumbnail\">
-                                        <img src=\"$imageURL\" alt=\"\" style=\"width: 215px; max-height: 200px\" >
-                                        <div class=\"text\">
-                                             <h4> &nbsp; $ballName</h4>
-                                        </div>
+                                    <img src=\"$imageURL\" alt=\"\" style=\"width: 215px; max-height: 200px\" >
                                         <div class=\"caption\">
-                                            <h4 class=\"pull-left\">Catch Rate: $catchDescript</h4>
-                                            <h4 class=\"pull-right\"> ¥ $price</h4>
+                                            <h4 class=\"pull-left\"> $regionName</h4>
+                                            <h4 class=\"pull-right\"> Generation: $generation</h4>
                                         </div>
                                     </div>
                                 </div>";
