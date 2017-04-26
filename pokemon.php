@@ -75,16 +75,20 @@
                             $name = $row["name"];
                             $id = $row["id"];
                             $imageURL = $row["image"];
-                            $productURL = "./product_page.php"."?product_id=".$row["name"];     // used to create product page
+                            $type1 = $row["type1"];
+                            // $productURL = "./product_page.php"."?product_id=".$row["name"];     // used to create product page
 
                             echo "<div class=\"col-sm-4 col-lg-4 col-md-4\">
                                     <div class=\"thumbnail\">
                                         <img src=\"$imageURL\" alt=\"\" style=\"width: auto; max-height: 200px\" >
                                         <div class=\"text\">
-                                            <h4><a href=\"$productURL\">$name</a></h4>
+                                            <h4>$id - $name</h4>
                                         </div>
                                         <div class=\"caption\">
                                             <h4 class=\"pull-left\">$id</h4>
+                                        </div>
+                                        <div class=\"caption\">
+                                            <h4 class=\"pull-left\">$type1</h4>
                                         </div>
                                     </div>
                                 </div>";
