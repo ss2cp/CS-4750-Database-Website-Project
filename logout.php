@@ -1,33 +1,81 @@
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php
+   ob_start();
+   session_start();
+?>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
+<?
+   // error_reporting(E_ALL);
+   // ini_set("display_errors", 1);
+?>
 
-    <!-- Custom CSS -->
-    <link href="./css/modern-business.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="./font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://foss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-
-<body>
-
-    <!-- Navbar -->
-    <!-- <?php include("./navbar.html");?> -->
-    <!-- Navbar -->
-    <!-- Navbar placeholder -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<html lang = "en">
+   
+   <head>
+      <title>PokemonDB Login Page</title>
+      <link href = "css/bootstrap.min.css" rel = "stylesheet">
+      
+      <style>
+         body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #ADABAB;
+         }
+         
+         .form-signin {
+            max-width: 330px;
+            padding: 15px;
+            margin: 0 auto;
+            color: #017572;
+         }
+         
+         .form-signin .form-signin-heading,
+         .form-signin .checkbox {
+            margin-bottom: 10px;
+         }
+         
+         .form-signin .checkbox {
+            font-weight: normal;
+         }
+         
+         .form-signin .form-control {
+            position: relative;
+            height: auto;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 10px;
+            font-size: 16px;
+         }
+         
+         .form-signin .form-control:focus {
+            z-index: 2;
+         }
+         
+         .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            border-color:#017572;
+         }
+         
+         .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-color:#017572;
+         }
+         
+         h2{
+            text-align: center;
+            color: #017572;
+         }
+      </style>
+      
+   </head>
+    
+   <body>
+      <!-- Navbar placeholder -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
          <div class="container">
            <!-- Brand and toggle get grouped for better mobile display -->
            <div class="navbar-header">
@@ -41,35 +89,66 @@
            </div>
          <!-- /.navbar-collapse -->
          </div>
-        <!-- /.container -->
-        </nav>
+      <!-- /.container -->
+      </nav>
 
-    <!-- Form -->
-    <div class="container">
-        <br />
-        <br />
-        <br />
-        <form class="form-horizontal" id="form_members" role="form" >
+      <h2>Enter Username and Password</h2> 
+      <div class = "container form-signin">         
+         <?php
+            $msg = '';
+            
+            $username="cs4750s17csp9sm";
+            $password="dataPro";
+            $database="cs4750s17csp9sm";
+            $mysqlserver="stardock.cs.virginia.edu";
 
-        <legend>Login Info</legend>
-        <div class="form-group">
-            <label for="userName" class="col-sm-2">User Name</label>
-            <div class="col-sm-4">
-                <input type="text" class="form-control" name="userName" id="userName" placeholder="username">
-            </div>
-            <label for="password" class="col-sm-2">Password</label>
-            <div class="col-sm-4">
-                <input type="text" class="form-control" name="password" id="password" placeholder="password">
-            </div>
+            $link=mysqli_connect($mysqlserver,$username,$password,$database) or die("Failed to connect to server !!");
+
+            if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])) {
+                   $inputUserName = $_POST['username'];
+               $inputPassword = $_POST['password'];
+
+               $loginQuery = "SELECT `username`, `password` FROM `pokemon_user` WHERE `username` = \"$inputUserName\"";
+               $loginResult = mysqli_query($link, $loginQuery);
+               $validPassword = $loginResult->fetch_assoc()["password"];
+
+               if ($inputPassword == $validPassword) {
+                  $_SESSION['valid'] = true;
+                  $_SESSION['timeout'] = time();
+                  $_SESSION['username'] = $inputUserName;
+                  
+                  header("Location: ./index.php");
+                  exit;
+
+               }else {
+                  $msg = 'Wrong username or password!';
+               }
+            }
+         ?>
+      </div> <!-- /container -->
+      
+      <div class = "container">
+      
+         <form class = "form-signin" role = "form"
+            action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); 
+            ?>" method = "post">
+            <h4 class = "form-signin-heading"><?php echo $msg; ?></h4>
+            <input type = "text" class = "form-control" 
+               name = "username" placeholder = "username" 
+               required autofocus></br>
+            <input type = "password" class = "form-control"
+               name = "password" placeholder = "password" required>
+            <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
+               name = "login">Login</button>
+
+         </form>
+
+         <form action="./signup.php" target="_blank" action="">
+            <button class = "btn btn-lg btn-primary btn-block">Sign Up</button>
+         </form>
+
         </div>
-
-        <div class="form-group">
-            <div class="col-sm-offset-3 col-sm-10">
-                <button type="submit" class="btn btn-warning" name="submit" id="submit">Submit</button>
-            </div>
-        </div>
-        </form>
-    </div>
-</body>
-
+      </div> 
+      
+   </body>
 </html>
