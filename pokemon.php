@@ -35,13 +35,13 @@
 
    <script>
    $(document).ready(function() {
-       $( "#snameinput" ).change(function() {
+       $( "#pnameinput" ).change(function() {
       
             $.ajax({
                 url: 'searchPokemon.php', 
-                data: {searchPokemon: $( "#snameinput" ).val()},
+                data: {searchPokemon: $( "#pnameinput" ).val()},
                 success: function(data){
-                    $('#snameresult').html(data);
+                    $('#pnameresult').html(data);
         
                 }
              });
@@ -58,15 +58,14 @@
 
   <!-- Page Content -->
     <div class="container">
-            <input class="xlarge" id="snameinput" type="search" size="30" placeholder="Sailor Name Contains"/>
-
-            <div id="snameresult">Search Result</div>
         <div class="row">
  
             <div class="col-md-9">
 
                 <div class="row">
+                    <input class="xlarge" id="pnameinput" type="search" size="30" placeholder="Pokemon Name Contains"/>
 
+                    <div id="pnameresult">Search Result</div>
                     <?php
 
                         // echo "<h2>PHP is Fun!</h2>";
@@ -105,7 +104,7 @@
 
                             echo "<div class=\"col-sm-4 col-lg-4 col-md-4\">
                                     <div class=\"thumbnail\">
-                                        <img src=\"$imageURL\" alt=\"$name\" style=\"width: auto; max-height: 200px\" >
+                                        <img src=\"$imageURL\" alt=\"$name\" style=\"width: auto; height: 200px\" >
                                         <div class=\"text\">
                                             <h3>$id - $name</h3>
                                         </div>
