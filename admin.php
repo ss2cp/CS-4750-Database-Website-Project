@@ -94,7 +94,7 @@
             <legend>Delete a Pokemon</legend>
             <label for="Did" class="col-sm-2">ID</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Did" id="Did" placeholder="001" pattern= "[0-9]" required>
+                <input type="text" class="form-control" name="Did" id="Did" placeholder="001" pattern="\d+" required>
             </div>
             <button type="submit" class="btn btn-warning" name="submit2" id="submit2">Submit</button>
         </form>
