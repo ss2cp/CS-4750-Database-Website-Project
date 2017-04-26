@@ -82,59 +82,14 @@
             echo "<p class='message'>" .$errorMessage. "</p>" ;
         }
         else{
-            $userID = "";
-            $cartID = "";
-            $addrID = "";
-            $userCount = 0;
-            $addrCount = 0;
+            // $query1 = "INSERT INTO `cs4750s17csp9sm`.`User` VALUES ('$userID', '$cartID', '', '', '$name', '$dob', '$email', '$phoneNum', '$userName')";
+            // $query2 = "INSERT INTO `cs4750s17csp9sm`.`Cart` VALUES ('$cartID', '$userID')";
+            // $query3 = "INSERT INTO `cs4750s17csp9sm`.`Address` VALUES ('$addrID', 'USA', '$state', '$city', '$streetName', '$streetNum', '$zipcode', '$userID')";
+            $query4 = "INSERT INTO `cs4750s17csp9sm`.`pokemon_user` VALUES ('$userName', '$password')";
 
-            $countUserQuery = "SELECT COUNT(`user_id`) FROM `User`";
-            $countAddrQuery = "SELECT COUNT(`address_id`) FROM `Address`";
-            $countUserResult = mysqli_query($link, $countUserQuery);
-            $countAddrResult = mysqli_query($link, $countAddrQuery);
-
-            $userCount = $countUserResult->fetch_assoc()["COUNT(`user_id`)"];
-            $addrCount = $countAddrResult->fetch_assoc()["COUNT(`address_id`)"];
-
-            // Generate new userID
-            if ($userCount >= "10000") {
-                $userID = "U" . ($userCount);
-                $cartID = "C" . ($userCount);
-            } elseif ($userCount >= "1000") {
-                $userID = "U0" . ($userCount);
-                $cartID = "C0" . ($userCount);
-            } elseif ($userCount >= "100") {
-                $userID = "U00" . ($userCount);
-                $cartID = "C00" . ($userCount);
-            } elseif ($userCount >= "10") {
-                $userID = "U000" . ($userCount);
-                $cartID = "C000" . ($userCount);
-            } else {
-                $userID = "U0000" . ($userCount);
-                $cartID = "C0000" . ($userCount);
-            }
-
-            // Generate new addrID
-            if ($addrCount >= "10000") {
-                $addrID = "A" . ($addrCount);
-            } elseif ($addrCount >= "1000") {
-                $addrID = "A0" . ($addrCount);
-            } elseif ($addrCount >= "100") {
-                $addrID = "A00" . ($addrCount);
-            } elseif ($addrCount >= "10") {
-                $addrID = "A000" . ($addrCount);
-            } else {
-                $addrID = "A0000" . ($addrCount);
-            }
-
-            $query1 = "INSERT INTO `pjw5za`.`User` VALUES ('$userID', '$cartID', '', '', '$name', '$dob', '$email', '$phoneNum', '$userName')";
-            $query2 = "INSERT INTO `pjw5za`.`Cart` VALUES ('$cartID', '$userID')";
-            $query3 = "INSERT INTO `pjw5za`.`Address` VALUES ('$addrID', 'USA', '$state', '$city', '$streetName', '$streetNum', '$zipcode', '$userID')";
-            $query4 = "INSERT INTO `pjw5za`.`User_Credential` VALUES ('$userName', '$password', '$userID')";
-
-            mysqli_query($link,$query1);
-            mysqli_query($link,$query2);
-            mysqli_query($link,$query3);
+            // mysqli_query($link,$query1);
+            // mysqli_query($link,$query2);
+            // mysqli_query($link,$query3);
             mysqli_query($link,$query4);
 
             $_SESSION['valid'] = true;
