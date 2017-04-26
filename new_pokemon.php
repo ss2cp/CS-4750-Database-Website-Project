@@ -58,7 +58,7 @@
             echo "<p class='message'>" .$errorMessage. "</p>" ;
         }
         else{
-            $query = "INSERT INTO `cs4750s17csp9sm`.`pokemon` VALUES ('$id', '$name','$type1', '$type2','$image')";
+            $query = "INSERT INTO `cs4750s17csp9sm`.`pokemon` VALUES ('$id', '$name','$type1', '$type2','$url')";
 
             mysqli_query($link,$query);
 

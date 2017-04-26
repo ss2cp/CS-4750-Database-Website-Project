@@ -104,7 +104,7 @@
 
                             echo "<div class=\"col-sm-4 col-lg-4 col-md-4\">
                                     <div class=\"thumbnail\">
-                                        <img src=\"$imageURL\" alt=\"$name\" style=\"width: auto; max-height: 200px\" >
+                                        <img src=\"$imageURL\" alt=\"$name\" style=\"width: auto; height: 200px\" >
                                         <div class=\"text\">
                                             <h3>$id - $name</h3>
                                         </div>

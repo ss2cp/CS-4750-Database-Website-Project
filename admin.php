@@ -35,27 +35,27 @@
         <div class="form-group">
             <label for="name" class="col-sm-2">Name</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="name" id="name" placeholder="Thomas Jefferson">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Bulbasaur">
             </div>
             <label for="id" class="col-sm-2">ID</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="id" id="id" placeholder="YYYY-MM-DD">
+                <input type="text" class="form-control" name="id" id="id" placeholder="001">
             </div>
         </div>
         <div class="form-group">
             <label for="type1" class="col-sm-2">Type 1</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="type1" id="type1" placeholder="thomas.jefferson@virginia.edu">
+                <input type="text" class="form-control" name="type1" id="type1" placeholder="Fire">
             </div>
             <label for="type2" class="col-sm-2">Type 2</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="type2" id="type2" placeholder="123-456-7890">
+                <input type="text" class="form-control" name="type2" id="type2" placeholder="Grass (or leave blank if not applicable)">
             </div>
         </div>
         <div class="form-group">
             <label for="url" class="col-sm-2">Image URL</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="url" id="url" placeholder="thomas.jefferson@virginia.edu">
+                <input type="text" class="form-control" name="url" id="url" placeholder="image URL">
             </div>
         </div>
 
