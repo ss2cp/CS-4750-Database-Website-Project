@@ -88,17 +88,20 @@
                         }
 
                         //$query = "SELECT `id`, `name`, `image`, `type1`,`type2`,`strength` FROM `pokemon` INNER JOIN `pokemon_type_strength` ON (nameType = type1) GROUP BY 1";
-                        $query = "SELECT 
+                        $query = "
+                        SELECT 
                         p.id,
                         p.name,
                         p.image,
                         p.type1,
                         p.type2,
                         ps.strength,
-                        pw.weakness
+                        pw.weakness, 
+                        pe.after_id
                         FROM pokemon AS p
-                        INNER JOIN pokemon_type_strength as ps ON p.type1 = ps.nameType 
-                        INNER JOIN pokemon_type_weakness as pw on p.type1 = pw.nameType GROUP BY p.id";
+                        INNER JOIN pokemon_type_strength AS ps ON p.type1 = ps.nameType 
+                        INNER JOIN pokemon_type_weakness AS pw on p.type1 = pw.nameType
+                        INNER JOIN pokemon_evolution AS pe on p.id = pe.before_id GROUP BY p.id";
                         $result = mysqli_query($conn, $query);
 
 
@@ -111,6 +114,7 @@
                             $type2 = $row["type2"];
                             $strength1 = $row["strength"];
                             $weakness1 = $row["weakness"];
+                            $evolution = $row["after_id"];
                          
                             // $productURL = "./product_page.php"."?product_id=".$row["name"];     // used to create product page
 
@@ -121,7 +125,10 @@
                                             <h3>$id - $name</h3>
                                         </div>
                                         <div class=\"caption\">
-                                            <h4 class=\"pull-left\">Type: <a href=\"type.php\"> $type1 $type2 </a><br/><br/>Strength: $strength1<br/>Weakness: $weakness1</h4>
+                                            <h4 class=\"pull-left\">Type: <a href=\"type.php\"> $type1 $type2 </a><br/><br/>Strength: $strength1
+                                                <br/>Weakness: $weakness1 
+                                                <br/>Next Evolution ID: $evolution
+                                            </h4>
                                         </div>
                                     </div>
                                 </div>";
