@@ -35,13 +35,13 @@
 
    <script>
    $(document).ready(function() {
-       $( "#snameinput" ).change(function() {
+       $( "#pnameinput" ).change(function() {
       
             $.ajax({
                 url: 'searchPokemon.php', 
-                data: {searchPokemon: $( "#snameinput" ).val()},
+                data: {searchPokemon: $( "#pnameinput" ).val()},
                 success: function(data){
-                    $('#snameresult').html(data);
+                    $('#pnameresult').html(data);
         
                 }
              });
@@ -58,9 +58,9 @@
 
   <!-- Page Content -->
     <div class="container">
-            <input class="xlarge" id="snameinput" type="search" size="30" placeholder="Sailor Name Contains"/>
+            <input class="xlarge" id="snameinput" type="search" size="30" placeholder="Pokemon Name Contains"/>
 
-            <div id="snameresult">Search Result</div>
+            <div id="pnameresult">Search Result</div>
         <div class="row">
  
             <div class="col-md-9">
