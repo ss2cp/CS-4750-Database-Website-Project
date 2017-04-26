@@ -67,26 +67,32 @@
                             echo "Failed to connect to MySQL: " . mysqli_connect_error();
                         }
 
-                        $query = "SELECT `region`, `generation`, `image`  FROM `pokemon_region` 
+                        $query = "SELECT `nameLeader`, `reward`, `badge`, `nameGym`, `image` FROM `pokemon_leader` 
                         #WHERE `dept_id` =  \"D00000\"";
                         $result = mysqli_query($conn, $query);
 
                         while ($row = $result->fetch_assoc()) {
-                            $regionName = $row["region"];
-                            $generation = $row["generation"];
-                            $imageURL = $row["image"];   
-               
+                            $leaderName = $row["nameLeader"];
+                            $reward = $row["reward"];
+                            $badge = $row["badge"];
+                            $gym = $row["nameGym"];
+                            $imageURL = $row["image"];
+                            // $productURL = "./product_page.php"."?product_id=".$row["name"];     // used to create product page
+// <h4><a href=\"$productURL\">$ballName</a></h4>
                             echo "<div class=\"col-sm-4 col-lg-4 col-md-4\">
                                     <div class=\"thumbnail\">
                                         <br />
-                                        <img src=\"$imageURL\" alt=\"\" style=\"width: 215px; height: 150px\" >
+                                        <img src=\"$imageURL\" alt=\"\" style=\"width: auto; height: 200px\" >
                                         <div class=\"text\">
-                                            <br />
-                                             <h4> &nbsp; $regionName</h4>
+                                             <h4> &nbsp; $leaderName</h4>
                                         </div>
                                         <div class=\"caption\">
-                                            <h4 class=\"pull-left\">Generation: $generation</h4>
-                                       </div>
+                                            <h7 class=\"pull-left\"><strong>Badge: </strong> $badge</h7>
+                                            <br />
+                                            <h7 class=\"pull-left\"> <strong>Gym: </strong>$gym</h7>
+                                            <br />
+                                            <h7 class=\"pull-left\"><strong> Reward: </strong>$reward</h7>
+                                        </div>
                                     </div>
                                 </div>";
 

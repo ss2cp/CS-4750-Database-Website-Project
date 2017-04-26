@@ -88,12 +88,11 @@ dept_beauty.php
                                         <br />
                                         <img src=\"$imageURL\" alt=\"\" style=\"width: auto; max-height: 200px\" >
                                         <div class=\"text\">
-                                            <h4>$potionName</h4>
+                                            <h4> &nbsp; $potionName</h4>
                                         </div>
                                         <div class=\"caption\">
-                                            <h4>Price: $ $price</h4>
-                                            <br>
-                                            <h4>HP: $HP</h4>
+                                            <h5>Price: $ $price</h5>
+                                            <h5>HP: $HP</h5>
                                         </div>
                                     </div>
                                 </div>";

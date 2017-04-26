@@ -86,8 +86,8 @@
                                              <h4> &nbsp; $ballName</h4>
                                         </div>
                                         <div class=\"caption\">
-                                            <h4 class=\"pull-left\">Catch Rate: $catchDescript</h4>
-                                            <h4 class=\"pull-right\"> ¥ $price</h4>
+                                            <h5 class=\"pull-left\">Catch Rate: $catchDescript</h5>
+                                            <h5 class=\"pull-right\"> ¥ $price</h5>
                                         </div>
                                     </div>
                                 </div>";
