@@ -1,3 +1,9 @@
+<!--
+Ketao Yin
+CS 4750
+dept_beauty.php
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PokemonDB - Pokemon</title>
+    <title>DashShop - Beauty Department</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -45,7 +51,6 @@
             <div class="col-md-9">
 
                 <div class="row">
-
                     <?php
 
                         // echo "<h2>PHP is Fun!</h2>";
@@ -67,27 +72,25 @@
                             echo "Failed to connect to MySQL: " . mysqli_connect_error();
                         }
 
-                        $query = "SELECT `nameBall`, `catchRate`, `priceBall`, `image` FROM `pokemon_ball` 
+                        $query = "SELECT `nameType`, `image`, `strength`, `weakness`  FROM `pokemon_types` 
                         #WHERE `dept_id` =  \"D00000\"";
                         $result = mysqli_query($conn, $query);
 
                         while ($row = $result->fetch_assoc()) {
-                            $ballName = $row["nameBall"];
-                            $price = $row["priceBall"];
-                            $catchDescript = $row["catchRate"];
+                            $typeName = $row["nameType"];
+                            $strength = $row["strength"];
+                            $weakness = $row["weakness"];
                             $imageURL = $row["image"];
-                            // $productURL = "./product_page.php"."?product_id=".$row["name"];     // used to create product page
-// <h4><a href=\"$productURL\">$ballName</a></h4>
+                            #$productURL = "./product_page.php"."?product_id=".$row["name"];     // used to create product page
+
                             echo "<div class=\"col-sm-4 col-lg-4 col-md-4\">
                                     <div class=\"thumbnail\">
-                                        <br />
-                                        <img src=\"$imageURL\" alt=\"\" style=\"width: 215px; max-height: 200px\" >
-                                        <div class=\"text\">
-                                             <h4> &nbsp; $ballName</h4>
-                                        </div>
+                                        <img src=\"$imageURL\" alt=\"\" style=\"width: auto; max-height: 200px\" >
                                         <div class=\"caption\">
-                                            <h4 class=\"pull-left\">Catch Rate: $catchDescript</h4>
-                                            <h4 class=\"pull-right\"> ¥ $price</h4>
+                                            <h4>Strength:</h4>
+                                            <h6>$strength</h6>
+                                            <h4>Weakness:</h4>
+                                            <h6>$weakness</h6>
                                         </div>
                                     </div>
                                 </div>";
@@ -100,6 +103,7 @@
                         mysqli_close($conn);
                     ?>
 
+                    
                 </div>
             </div>
         </div>

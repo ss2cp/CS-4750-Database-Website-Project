@@ -39,13 +39,12 @@
 
   <!-- Page Content -->
     <div class="container">
-        <h1>Region</h1>
-        <br />
-        <!-- <div class="row"> -->
- 
-            <!-- <div class="col-md-9"> -->
 
-                <!-- <div class="row"> -->
+        <div class="row">
+ 
+            <div class="col-md-9">
+
+                <div class="row">
 
                     <?php
 
@@ -53,14 +52,6 @@
                         // echo "Hello world!<br>";
                         // echo "I'm about to learn PHP!<br>";
                         // echo "This ", "string ", "was ", "made ", "with multiple parameters.";
-                        echo "
-                            <table style=\"width:50%; text-align: center; \">
-                                <tr>
-                                    <td><strong>Region</strong></td>
-                                    <td><strong>Generation</strong></td>
-                                    <td><strong>Image</strong></td>
-                                </tr>
-                        ";
 
                         $username="cs4750s17csp9sm";
                         $password="dataPro";
@@ -83,26 +74,23 @@
                         while ($row = $result->fetch_assoc()) {
                             $regionName = $row["region"];
                             $generation = $row["generation"];
-                            $imageURL = $row["image"];         
-                            // <div class=\"thumbnail\" >
-                            //         <img src=\"$imageURL\" alt=\"\" style=\"width: autopx; max-height: 300px\" >
-                            //             <div class=\"caption\">
-                            //                 <h4 class=\"pull-left\"> $regionName</h4>
-                            //                 <h4 class=\"pull-right\"> Generation: $generation</h4>
-                            //             </div>
-                            //         </div>
-                                     
-                            // $productURL = "./product_page.php"."?product_id=".$row["name"];     // used to create product page
-// <h4><a href=\"$productURL\">$ballName</a></h4>
-                            echo "
-                                <tr>
-                                    <td>$regionName</td>
-                                    <td>$generation</td>
-                                    <td><img src=\"$imageURL\" alt=\"\" style=\"width: autopx; max-height: 500px\" ></td>
-                                </tr>";
+                            $imageURL = $row["image"];   
+               
+                            echo "<div class=\"col-sm-4 col-lg-4 col-md-4\">
+                                    <div class=\"thumbnail\">
+                                        <br />
+                                        <img src=\"$imageURL\" alt=\"\" style=\"width: 215px; height: 150px\" >
+                                        <div class=\"text\">
+                                            s<br />
+                                             <h4> &nbsp; $regionName</h4>
+                                        </div>
+                                        <div class=\"caption\">
+                                            <h4 class=\"pull-left\">Generation: $generation</h4>
+                                       </div>
+                                    </div>
+                                </div>";
 
                         }
-                        echo " </table>";
 
                         /* free result set */
                         $result->close();
@@ -110,10 +98,10 @@
                         mysqli_close($conn);
                     ?>
 
-                <!-- </div> -->
-            <!-- </div> -->
-        <!-- </div> -->
-    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 
