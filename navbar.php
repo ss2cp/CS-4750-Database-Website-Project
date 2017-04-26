@@ -38,6 +38,9 @@
                 <li>
                     <a href="">Hi, <?php echo $firstName[0]?></a>
                 </li>
+                <li>
+                    <a href="">Logout </a>
+                </li>
             </ul>
         <!-- </div> -->
 

@@ -8,8 +8,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
     <!-- Bootstrap Core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -45,25 +43,44 @@
 
     $link=mysqli_connect($mysqlserver,$username,$password,$database) or die("Failed to connect to server !!");
 
-    if(isset($_REQUEST['submit1']))
+    if(isset($_REQUEST['submit3']))
     {
         $errorMessage = "";
-        $name=$_POST['name'];
-        $id=$_POST['id'];
-        $type1=$_POST['type1'];
-        $type2=$_POST['type2'];
-        $url=$_POST['url'];
+        $name=$_POST['name3'];
+        $id=$_POST['id3'];
+        $type1=$_POST['type13'];
+        $type2=$_POST['type23'];
+        $url=$_POST['url3'];
 
         if ($errorMessage != "" ) {
             echo "<p class='message'>" .$errorMessage. "</p>" ;
         }
         else{
-            $query = "INSERT INTO `cs4750s17csp9sm`.`pokemon` VALUES ('$id', '$name','$type1', '$type2','$url')";
+            $query2 ="SELECT * FROM `cs4750s17csp9sm`.pokemon WHERE `id` =('$id')";
+            $result = mysqli_query($link, $query2);
+            
+            while ($row = $result->fetch_assoc()) {
+                if($name =="") {
+                    $name = $row["name"];
+                }
+                if($url =="") {
+                    $url = $row["image"];
+                }
+                if($type1 =="") {
+                    $type1 = $row["type1"];
+                }
+                if($type2 =="") {
+                    $type2 = $row["type2"];
+                }
+                
+            }
+
+            $query = "UPDATE `cs4750s17csp9sm`.`pokemon` SET `name` =('$name'), `type1` =('$type1') ,`type2` = ('$type2'), `image`=('$url')  WHERE `id` =('$id')";
 
             mysqli_query($link,$query);
 
             echo "<Legend>";
-            echo "New Pokemon Created!";
+            echo "Modified Pokemon #".$id."!";
             echo "</Legend>";
         }
     }
