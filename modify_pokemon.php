@@ -45,7 +45,7 @@
 
     $link=mysqli_connect($mysqlserver,$username,$password,$database) or die("Failed to connect to server !!");
 
-    if(isset($_REQUEST['submit1']))
+    if(isset($_REQUEST['submit3']))
     {
         $errorMessage = "";
         $name=$_POST['name'];
@@ -58,6 +58,9 @@
             echo "<p class='message'>" .$errorMessage. "</p>" ;
         }
         else{
+            UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
             $query = "INSERT INTO `cs4750s17csp9sm`.`pokemon` VALUES ('$id', '$name','$type1', '$type2','$url')";
 
             mysqli_query($link,$query);
