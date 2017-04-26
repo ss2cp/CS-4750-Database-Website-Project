@@ -14,7 +14,7 @@ index.php
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>DashShop</title>
+    <title>PokemonDB</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -50,7 +50,7 @@ index.php
         <div class="row">
 
             <div class="col-md-4 col-sm-6">
-                <a href="./dept_books.php">
+                <a href="./pokemon.php">
                     <img class="img-responsive img-rounded" src="./assets/homepage/books.JPG" alt="" width="700" height="450">
                 </a>
             </div>
@@ -70,7 +70,7 @@ index.php
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
-                <a href="./dept_beauty.php">
+                <a href="./potion.php">
                     <img class="img-responsive img-rounded" src="./assets/homepage/beauty.JPG" alt="" width="700" height="450">
                 </a>
             </div>
