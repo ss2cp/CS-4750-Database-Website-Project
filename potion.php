@@ -87,6 +87,7 @@ dept_beauty.php
                                     <div class=\"thumbnail\">
                                         <br />
                                         <img src=\"$imageURL\" alt=\"\" style=\"width: auto; max-height: 200px\" >
+                                        <br />
                                         <div class=\"text\">
                                             <h4> &nbsp; $potionName</h4>
                                         </div>
