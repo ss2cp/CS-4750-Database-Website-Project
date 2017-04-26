@@ -1,3 +1,4 @@
+<!-- delete from r -->
 <?php
    session_start();
 ?>
@@ -45,25 +46,26 @@
 
     $link=mysqli_connect($mysqlserver,$username,$password,$database) or die("Failed to connect to server !!");
 
-    if(isset($_REQUEST['submit1']))
+    if(isset($_REQUEST['submit2']))
     {
         $errorMessage = "";
-        $name=$_POST['name'];
-        $id=$_POST['id'];
-        $type1=$_POST['type1'];
-        $type2=$_POST['type2'];
-        $url=$_POST['url'];
+        // $name=$_POST['name'];
+        $id=$_POST['Did'];
+        // $type1=$_POST['type1'];
+        // $type2=$_POST['type2'];
+        // $url=$_POST['url'];
 
         if ($errorMessage != "" ) {
             echo "<p class='message'>" .$errorMessage. "</p>" ;
         }
         else{
-            $query = "INSERT INTO `cs4750s17csp9sm`.`pokemon` VALUES ('$id', '$name','$type1', '$type2','$url')";
+        	
+	        $query = "DELETE FROM `cs4750s17csp9sm`.`pokemon` WHERE `id` =('$id')";
 
-            mysqli_query($link,$query);
+	        mysqli_query($link,$query);
 
-            echo "<Legend>";
-            echo "New Pokemon Created!";
+	        echo "<Legend>";
+	        echo "<p class='message'> HI this has been deleted ".$id. "</p>";
             echo "</Legend>";
         }
     }
