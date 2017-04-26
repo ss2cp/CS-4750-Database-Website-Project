@@ -67,12 +67,10 @@
                             echo "Failed to connect to MySQL: " . mysqli_connect_error();
                         }
 
-                        $query = "SELECT `id`, `name`, `image`, `type1`,`type2` FROM `pokemon` ";
+                        $query = "SELECT `id`, `name`, `image`, `type1`,`type2`,`strength` FROM `pokemon` INNER JOIN `pokemon_type_strength` ON (nameType = type1) GROUP BY 1";
                         $result = mysqli_query($conn, $query);
 
-                        $query2 = "SELECT `nameType`, `strength` FROM `pokemon_type_strength` ";
-                        $result2 = mysqli_query($conn, $query2);
-                        $row2=$result2->fetch_assoc();
+
 
                         while ($row = $result->fetch_assoc()) {
                             $name = $row["name"];
@@ -80,7 +78,7 @@
                             $imageURL = $row["image"];
                             $type1 = $row["type1"];
                             $type2 = $row["type2"];
-                            $strength1 = $row2["strength"];
+                            $strength1 = $row["strength"];
                          
                             // $productURL = "./product_page.php"."?product_id=".$row["name"];     // used to create product page
 
@@ -91,7 +89,7 @@
                                             <h3>$id - $name</h3>
                                         </div>
                                         <div class=\"caption\">
-                                            <h4 class=\"pull-left\">$type1 $type2<br/><br/>Strength: $strength1<br/>Weakness: </h4>
+                                            <h4 class=\"pull-left\">Type: <a href=\"type.php\"> $type1 $type2 </a><br/><br/>Strength: $strength1<br/>Weakness: </h4>
                                         </div>
                                     </div>
                                 </div>";
