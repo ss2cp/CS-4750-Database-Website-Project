@@ -75,7 +75,7 @@
                 </div>
                 <label for="type2" class="col-sm-2">Type 2</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" name="type2" id="type2" placeholder="Grass (or leave blank if not applicable)">
+                    <input type="text" class="form-control" name="type2" id="type2" placeholder="Grass (or leave blank if N/A)">
                 </div>
             </div>
             <div class="form-group">
