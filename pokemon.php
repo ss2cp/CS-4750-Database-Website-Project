@@ -30,6 +30,25 @@
             background-color: #BDC3C7;
         }
     </style>
+    <script src="js/jquery-1.6.2.min.js" type="text/javascript"></script> 
+    <script src="js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+
+   <script>
+   $(document).ready(function() {
+       $( "#snameinput" ).change(function() {
+      
+            $.ajax({
+                url: 'searchPokemon.php', 
+                data: {searchPokemon: $( "#snameinput" ).val()},
+                success: function(data){
+                    $('#snameresult').html(data);
+        
+                }
+             });
+         });
+       
+     });
+</script>
 </head>
 
 <body>
@@ -39,7 +58,9 @@
 
   <!-- Page Content -->
     <div class="container">
+            <input class="xlarge" id="snameinput" type="search" size="30" placeholder="Sailor Name Contains"/>
 
+            <div id="snameresult">Search Result</div>
         <div class="row">
  
             <div class="col-md-9">

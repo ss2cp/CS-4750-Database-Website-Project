@@ -14,7 +14,7 @@ dept_beauty.php
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>DashShop - Beauty Department</title>
+    <title>PokemonDB -Potion</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
