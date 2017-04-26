@@ -87,7 +87,7 @@ dept_beauty.php
                                     <div class=\"thumbnail\">
                                         <img src=\"$imageURL\" alt=\"\" style=\"width: auto; max-height: 200px\" >
                                         <div class=\"text\">
-                                            <h4><a href=\"$imageURL\">$potionName</a></h4>
+                                            <h4>$potionName</h4>
                                         </div>
                                         <div class=\"caption\">
                                             <h4>Price: $ $price</h4>
