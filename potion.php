@@ -51,7 +51,6 @@ dept_beauty.php
             <div class="col-md-9">
 
                 <div class="row">
-
                     <?php
 
                         // echo "<h2>PHP is Fun!</h2>";
@@ -59,10 +58,10 @@ dept_beauty.php
                         // echo "I'm about to learn PHP!<br>";
                         // echo "This ", "string ", "was ", "made ", "with multiple parameters.";
 
-                        $username="pjw5za";
-                        $password="4qHnaBJ2";
-                        $database="pjw5za";
-                        $mysqlserver="localhost";
+                        $username="cs4750s17csp9sm";
+                        $password="dataPro";
+                        $database="cs4750s17csp9sm";
+                        $mysqlserver="stardock.cs.virginia.edu";
 
                         // Create connection
                         $conn = mysqli_connect($mysqlserver,$username,$password,$database);
@@ -73,26 +72,27 @@ dept_beauty.php
                             echo "Failed to connect to MySQL: " . mysqli_connect_error();
                         }
 
-                        $query = "SELECT  `product_id`, `product_name`, `image_URL`, `price` FROM `Product` WHERE  `dept_id` =  \"D00004\"";
+                        $query = "SELECT `id`, `name`, `image`, `type1` FROM `pokemon` 
+                        #WHERE `dept_id` =  \"D00000\"";
                         $result = mysqli_query($conn, $query);
 
                         while ($row = $result->fetch_assoc()) {
-                            $productName = $row["product_name"];
-                            $price = $row["price"];
-                            $imageURL = $row["image_URL"];
-                            $productURL = "./product_page.php"."?product_id=".$row["product_id"];     // used to create product page
+                            $productName = $row["name"];
+                            $price = $row["id"];
+                            $imageURL = $row["image"];
+                            $productURL = "./product_page.php"."?product_id=".$row["name"];     // used to create product page
 
-                        echo "<div class=\"col-sm-4 col-lg-4 col-md-4\">
-                                <div class=\"thumbnail\">
-                                    <img src=\"$imageURL\" alt=\"\" style=\"width: auto; max-height: 200px\" >
-                                    <div class=\"text\">
-                                        <h4><a href=\"$productURL\">$productName</a></h4>
+                            echo "<div class=\"col-sm-4 col-lg-4 col-md-4\">
+                                    <div class=\"thumbnail\">
+                                        <img src=\"$imageURL\" alt=\"\" style=\"width: auto; max-height: 200px\" >
+                                        <div class=\"text\">
+                                            <h4><a href=\"$productURL\">$productName</a></h4>
+                                        </div>
+                                        <div class=\"caption\">
+                                            <h4 class=\"pull-left\">$price</h4>
+                                        </div>
                                     </div>
-                                    <div class=\"caption\">
-                                        <h4 class=\"pull-right\">\$$price</h4>
-                                    </div>
-                                </div>
-                            </div>";
+                                </div>";
 
                         }
 
@@ -102,6 +102,7 @@ dept_beauty.php
                         mysqli_close($conn);
                     ?>
 
+                    
                 </div>
             </div>
         </div>
