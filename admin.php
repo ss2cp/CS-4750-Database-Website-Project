@@ -3,8 +3,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
     <!-- Bootstrap Core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -62,9 +60,9 @@
                 <div class="col-sm-4">
                     <input type="text" class="form-control" name="name" id="name" placeholder="Bulbasaur">
                 </div>
-                <label for="id" class="col-sm-2">ID</label>
+                <label for="id" class="col-sm-2" >ID</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" name="id" id="id" placeholder="The last ID is <?php echo $row[0]?>">
+                    <input type="text" class="form-control" name="id" id="id" placeholder="The last ID is <?php echo $row[0]?>" required>
                 </div>
             </div>
 
@@ -96,7 +94,7 @@
             <legend>Delete a Pokemon</legend>
             <label for="Did" class="col-sm-2">ID</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Did" id="Did" placeholder="001">
+                <input type="text" class="form-control" name="Did" id="Did" placeholder="001" required>
             </div>
             <button type="submit" class="btn btn-warning" name="submit2" id="submit2">Submit</button>
         </form>
@@ -109,7 +107,7 @@
                 </div>
                 <label for="id3" class="col-sm-2">ID</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" name="id3" id="id3" placeholder="001">
+                    <input type="text" class="form-control" name="id3" id="id3" placeholder="The last ID is <?php echo $row[0]?>" required>
                 </div>
             </div>
 
@@ -118,10 +116,11 @@
                 <div class="col-sm-4">
                     <input type="text" class="form-control" name="type13" id="type13" placeholder="Fire">
                 </div>
-                <label for="type23" class="col-sm-23">Type 2</label>
+                <label for="type23" class="col-sm-2">Type 2</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" name="type23" id="type23" placeholder="Grass (or leave blank if not applicable)">
+                    <input type="text" class="form-control" name="type23" id="type23" placeholder="Grass (or leave blank if N/A)">
                 </div>
+
             </div>
             <div class="form-group">
                 <label for="url3" class="col-sm-2">Image URL</label>
