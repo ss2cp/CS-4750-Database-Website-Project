@@ -80,6 +80,7 @@
 // <h4><a href=\"$productURL\">$ballName</a></h4>
                             echo "<div class=\"col-sm-4 col-lg-4 col-md-4\">
                                     <div class=\"thumbnail\">
+                                        <br />
                                         <img src=\"$imageURL\" alt=\"\" style=\"width: 215px; max-height: 200px\" >
                                         <div class=\"text\">
                                              <h4> &nbsp; $ballName</h4>
