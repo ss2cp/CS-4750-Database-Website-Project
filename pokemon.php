@@ -58,15 +58,14 @@
 
   <!-- Page Content -->
     <div class="container">
-            <input class="xlarge" id="snameinput" type="search" size="30" placeholder="Pokemon Name Contains"/>
-
-            <div id="pnameresult">Search Result</div>
         <div class="row">
  
             <div class="col-md-9">
 
                 <div class="row">
+                    <input class="xlarge" id="pnameinput" type="search" size="30" placeholder="Pokemon Name Contains"/>
 
+                    <div id="pnameresult">Search Result</div>
                     <?php
 
                         // echo "<h2>PHP is Fun!</h2>";
