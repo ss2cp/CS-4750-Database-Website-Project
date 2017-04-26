@@ -38,9 +38,6 @@
                 <li>
                     <a href="">Hi, <?php echo $firstName[0]?></a>
                 </li>
-                <li>
-                    <a href="./cart.php">Cart</a>
-                </li>
             </ul>
         </div>
     <?php }
