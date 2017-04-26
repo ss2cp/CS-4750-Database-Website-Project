@@ -53,10 +53,10 @@ item_added.php
                     $quantity = "1";
                     $dateAdded = date("Y-m-d");
 
-                    $username="pjw5za";
-                    $password="4qHnaBJ2";
-                    $database="pjw5za";
-                    $mysqlserver="localhost";
+                    $username="cs4750s17csp9sm";
+                    $password="dataPro";
+                    $database="cs4750s17csp9sm";
+                    $mysqlserver="stardock.cs.virginia.edu";
 
                     // Create connection
                     $conn = mysqli_connect($mysqlserver,$username,$password,$database);
