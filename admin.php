@@ -62,7 +62,7 @@
                 </div>
                 <label for="id" class="col-sm-2" >ID</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" name="id" id="id" value="<?php echo $row[0]+1?>" required>
+                    <input type="text" class="form-control" name="id" id="id" value="<?php echo $row[0]+1?>" pattern="\d+" required>
                 </div>
             </div>
 
@@ -94,7 +94,7 @@
             <legend>Delete a Pokemon</legend>
             <label for="Did" class="col-sm-2">ID</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Did" id="Did" placeholder="001" required>
+                <input type="text" class="form-control" name="Did" id="Did" placeholder="001" pattern= "[0-9]" required>
             </div>
             <button type="submit" class="btn btn-warning" name="submit2" id="submit2">Submit</button>
         </form>
@@ -107,7 +107,7 @@
                 </div>
                 <label for="id3" class="col-sm-2">ID</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" name="id3" id="id3" placeholder="The last ID is <?php echo $row[0]?>" required>
+                    <input type="text" class="form-control" name="id3" id="id3" placeholder="The last ID is <?php echo $row[0]?>" pattern= "[0-9]" required>
                 </div>
             </div>
 

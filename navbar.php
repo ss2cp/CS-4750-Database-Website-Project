@@ -1,5 +1,6 @@
 <?php
     session_start();
+
 ?>
 
 <!-- Navigation -->
@@ -19,7 +20,7 @@
         </div>
 
     <?php
-    if ($_SESSION['username']) {
+    if (isset($_SESSION['username'])) {
         $username="cs4750s17csp9sm";
         $password="dataPro";
         $database="cs4750s17csp9sm";

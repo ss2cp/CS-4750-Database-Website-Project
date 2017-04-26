@@ -1,6 +1,9 @@
 <?php
    ob_start();
    session_start();
+   $_SESSION = array();
+   session_destroy();
+
 ?>
 
 <?
@@ -85,7 +88,7 @@
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand" href="">PokemonDB</a>
+               <a class="navbar-brand" href="index.php">PokemonDB</a>
            </div>
          <!-- /.navbar-collapse -->
          </div>
