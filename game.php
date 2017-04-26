@@ -108,7 +108,7 @@
                                             <h4> &nbsp; Name: $nameGame</h4>
                                         </div>
                                         <div class=\"caption\">
-                                            <h4 class=\"pull-left\">Year of Release: $year</h4>
+                                            <h7 class=\"pull-left\"><strong>Year of Release</strong>: $year</h7>
                                         </div>
                                     </div>
                                 </div>";
