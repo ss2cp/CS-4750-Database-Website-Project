@@ -77,17 +77,17 @@ dept_beauty.php
                         $result = mysqli_query($conn, $query);
 
                         while ($row = $result->fetch_assoc()) {
-                            $productName = $row["namePotion"];
+                            $potionName = $row["namePotion"];
                             $price = $row["pricePotion"];
                             $HP = $row["HP"];
                             $imageURL = $row["images"];
-                            $productURL = "./product_page.php"."?product_id=".$row["name"];     // used to create product page
+                            #$productURL = "./product_page.php"."?product_id=".$row["name"];     // used to create product page
 
                             echo "<div class=\"col-sm-4 col-lg-4 col-md-4\">
                                     <div class=\"thumbnail\">
                                         <img src=\"$imageURL\" alt=\"\" style=\"width: auto; max-height: 200px\" >
                                         <div class=\"text\">
-                                            <h4><a href=\"$imageURL\">$productName</a></h4>
+                                            <h4><a href=\"$imageURL\">$potionName</a></h4>
                                         </div>
                                         <div class=\"caption\">
                                             <h4>Price: $ $price</h4>
