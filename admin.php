@@ -28,6 +28,36 @@
  <!-- Navbar -->
     <?php include("./navbar.php");?>
 
+<?php
+
+    // echo "<h2>PHP is Fun!</h2>";
+    // echo "Hello world!<br>";
+    // echo "I'm about to learn PHP!<br>";
+    // echo "This ", "string ", "was ", "made ", "with multiple parameters.";
+
+    $username="cs4750s17csp9sm";
+    $password="dataPro";
+    $database="cs4750s17csp9sm";
+    $mysqlserver="stardock.cs.virginia.edu";
+
+    // Create connection
+    $conn = mysqli_connect($mysqlserver,$username,$password,$database);
+
+    // Check connection
+    if (mysqli_connect_errno())
+    {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
+
+    $query = "SELECT MAX(id) FROM `pokemon`";
+    $result = mysqli_query($conn,  $query);
+    $row = mysqli_fetch_row($result);
+
+    /* free result set */
+    $result->close();
+
+    mysqli_close($conn);
+?>
     <!-- Form -->
     <div class="container">
         <form class="form-horizontal" id="form_members" role="form" action="new_pokemon.php" method="POST">
@@ -39,7 +69,7 @@
             </div>
             <label for="id" class="col-sm-2">ID</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="id" id="id" placeholder="001">
+                <input type="text" class="form-control" name="id" id="id" placeholder="The last ID is <?php echo $row[0]?>">
             </div>
         </div>
         <div class="form-group">
