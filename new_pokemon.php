@@ -45,7 +45,9 @@
 
     $link=mysqli_connect($mysqlserver,$username,$password,$database) or die("Failed to connect to server !!");
 
+
     if(isset($_REQUEST['submit1']))
+
     {
         $errorMessage = "";
         $name=$_POST['name'];
@@ -54,8 +56,20 @@
         $type2=$_POST['type2'];
         $url=$_POST['url'];
 
-        if ($errorMessage != "" ) {
-            echo "<p class='message'>" .$errorMessage. "</p>" ;
+        if($name == ""||$id == ""||$type1 == ""||$url == ""){
+            if ($name == "" ) {
+            echo "<p class='message'>" ."Please input pokemon name.". "</p>" ;
+            }
+            if ($id == "" ) {
+            echo "<p class='message'>" ."Please input pokemon ID.". "</p>" ;
+            }
+            if ($type1 == "" ) {
+            echo "<p class='message'>" ."Please input at least one pokemon type.". "</p>" ;
+            }
+            if ($url == "" ) {
+            echo "<p class='message'>" ."Please input pokemon image url to make it prettier.". "</p>" ;
+            }
+            echo "<a href=\"http://plato.cs.virginia.edu/~ss2cp/admin.php\">GO BACK</a>";
         }
         else{
             $query = "INSERT INTO `cs4750s17csp9sm`.`pokemon` VALUES ('$id', '$name','$type1', '$type2','$url')";
