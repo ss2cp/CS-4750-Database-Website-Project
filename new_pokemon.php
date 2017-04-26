@@ -77,8 +77,8 @@
             if ($id == "" ) {
             echo "<p class='message'>" ."Please input pokemon ID.". "</p>" ;
             }
-            if ($id<$row[0]) {
-            echo "<p class='message'>" ."Please input VALID pokemon ID. It should be larger than $row[0]". "</p>" ;
+            if ($id!=$row[0]+1) {
+            echo "<p class='message'>" ."Please input VALID pokemon ID. It should be $row[0]+1". "</p>" ;
             }
             if (!is_int($id)) {
             echo "<p class='message'>" ."Please input VALID pokemon ID. It should be a WHOLE number". "</p>" ;
