@@ -1,9 +1,3 @@
-<!--
-Ketao Yin
-CS 4750
-signup.php
--->
-
 <html lang="en">
 <head>
     <meta charset="utf-8">

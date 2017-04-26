@@ -27,9 +27,9 @@
 
         // Find customer first name
         $sessionUserName = $_SESSION['username'];
-        $nameQuery = "SELECT `name` FROM `User` WHERE `login` = \"$sessionUserName\"";
+        $nameQuery = "SELECT `username` FROM `pokemon_user` WHERE `username` = \"$sessionUserName\"";
         $nameResult = mysqli_query($link, $nameQuery);
-        $name = $nameResult->fetch_assoc()["name"];
+        $name = $nameResult->fetch_assoc()["username"];
         $firstName = explode(" ", $name);
     ?>
         <!-- Collect the nav links, forms, and other content for toggling -->

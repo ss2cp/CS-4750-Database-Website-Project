@@ -108,7 +108,7 @@
 				   $inputUserName = $_POST['username'];
                $inputPassword = $_POST['password'];
 
-               $loginQuery = "SELECT `login`, `password` FROM `User_Credential` WHERE `login` = \"$inputUserName\"";
+               $loginQuery = "SELECT `username`, `password` FROM `pokemon_user` WHERE `username` = \"$inputUserName\"";
                $loginResult = mysqli_query($link, $loginQuery);
                $validPassword = $loginResult->fetch_assoc()["password"];
 
