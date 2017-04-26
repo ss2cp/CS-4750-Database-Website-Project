@@ -84,8 +84,9 @@
 
                 <div class="row">
                     <input class="xlarge" id="pnameinput" type="search" size="30" placeholder="Pokemon Name Contains"/>
+                    <button id="pnamebtn" type="button">Find</button> 
+                    <div id="pnameresult">Search Result</div> 
 
-                    <div id="pnameresult">Search Result</div>
                     
 
                 </div>
