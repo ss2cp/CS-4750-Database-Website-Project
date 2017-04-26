@@ -1,9 +1,3 @@
-<!--
-Ketao Yin
-CS 4750
-dept_books.php
--->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +8,7 @@ dept_books.php
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>DashShop - Books Department</title>
+    <title>PokemonDB - Pokemon</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">

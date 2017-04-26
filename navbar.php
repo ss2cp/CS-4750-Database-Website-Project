@@ -24,10 +24,10 @@ navbar.php
 
     <?php
     if ($_SESSION['username']) {
-        $username="pjw5za";
-        $password="4qHnaBJ2";
-        $database="pjw5za";
-        $mysqlserver="localhost";
+        $username="cs4750s17csp9sm";
+        $password="dataPro";
+        $database="cs4750s17csp9sm";
+        $mysqlserver="stardock.cs.virginia.edu";
 
         $link=mysqli_connect($mysqlserver,$username,$password,$database) or die("Failed to connect to server !!");
 
