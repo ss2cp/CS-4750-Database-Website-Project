@@ -95,12 +95,15 @@
                         p.type1,
                         p.type2,
                         ps.strength,
-                        pw.weakness, 
-                        pe.after_id
+                        pw.weakness
                         FROM pokemon AS p
                         INNER JOIN pokemon_type_strength AS ps ON p.type1 = ps.nameType 
                         INNER JOIN pokemon_type_weakness AS pw on p.type1 = pw.nameType
-                        INNER JOIN pokemon_evolution AS pe on p.id = pe.before_id GROUP BY p.id";
+                        WHERE p.id IN (
+                            SELECT before_id
+                            FROM pokemon_evolution
+                            )
+                         GROUP BY p.id";
                         $result = mysqli_query($conn, $query);
                         
 
