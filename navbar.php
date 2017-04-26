@@ -39,7 +39,23 @@
                     <a href="">Hi, <?php echo $firstName[0]?></a>
                 </li>
             </ul>
-        </div>
+        <!-- </div> -->
+
+<?php
+        if ($firstName[0] == "admin") {
+        echo"<ul class=\"nav navbar-nav navbar-right\">
+                <li>
+                    <a href=\"./admin.php\">ADMIN</a>
+                </li>
+            </ul>
+        </div>";
+        }else{
+            echo"
+        </div>";
+        }
+
+        ?>
+
     <?php }
     ?>
         <!-- /.navbar-collapse -->
