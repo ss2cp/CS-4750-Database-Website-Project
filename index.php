@@ -49,42 +49,40 @@
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
-                <a href="./dept_movies.php">
+                <a href="./type.php">
                     <img class="img-responsive img-rounded" src="./assets/homepage/types.png" alt="" width="700" height="450">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
-                <a href="./dept_home.php">
+                <a href="./ball.php">
                     <img class="img-responsive img-rounded" src="./assets/homepage/pokeballs.png" alt="" width="700" height="450">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
-                <a href="./dept_electronics.php">
+                <a href="./gym.php">
                     <img class="img-responsive img-rounded" src="./assets/homepage/gyms.png" alt="" width="700" height="450">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
-                <a href="./potion.php">
-                    <img class="img-responsive img-rounded" src="./assets/homepage/pokemondb.png" alt="" width="700" height="450">
-                </a>
+                <img class="img-responsive img-rounded" src="./assets/homepage/pokemondb.png" alt="" width="700" height="450">    
             </div>
             <div class="col-md-4 col-sm-6">
-                <a href="./dept_shoes.php">
+                <a href="./region.php">
                     <img class="img-responsive img-rounded" src="./assets/homepage/regions.png" alt="" width="700" height="450">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
-                <a href="./dept_computers.php">
+                <a href="./game.php">
                     <img class="img-responsive img-rounded" src="./assets/homepage/games.png" alt="" width="700" height="450">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
-                <a href="./dept_handmade.php">
+                <a href="./leader.php">
                     <img class="img-responsive img-rounded" src="./assets/homepage/leaders.png" alt="" width="700" height="450">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
-                <a href="./dept_cellphones.php">
+                <a href="./potion.php">
                     <img class="img-responsive img-rounded" src="./assets/homepage/potions.png" alt="" width="700" height="450">
                 </a>
             </div>
