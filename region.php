@@ -79,7 +79,7 @@
 // <h4><a href=\"$productURL\">$ballName</a></h4>
                             echo "<div class=\"col-sm-4 col-lg-4 col-md-4\">
                                     <div class=\"thumbnail\">
-                                    <img src=\"$imageURL\" alt=\"\" style=\"width: 215px; max-height: 200px\" >
+                                    <img src=\"$imageURL\" alt=\"\" style=\"width: 200px; max-height: 200px\" >
                                         <div class=\"caption\">
                                             <h4 class=\"pull-left\"> $regionName</h4>
                                             <h4 class=\"pull-right\"> Generation: $generation</h4>
