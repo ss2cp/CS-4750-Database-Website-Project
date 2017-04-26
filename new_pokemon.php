@@ -44,7 +44,21 @@
     $mysqlserver="stardock.cs.virginia.edu";
 
     $link=mysqli_connect($mysqlserver,$username,$password,$database) or die("Failed to connect to server !!");
+ 
+    // Check connection
+    if (mysqli_connect_errno())
+    {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
 
+    $query = "SELECT MAX(id) FROM `pokemon`";
+    $result = mysqli_query($link,  $query);
+    $row = mysqli_fetch_row($result);
+
+    /* free result set */
+    $result->close();
+
+    mysqli_close($link);
 
     if(isset($_REQUEST['submit1']))
 
@@ -63,13 +77,20 @@
             if ($id == "" ) {
             echo "<p class='message'>" ."Please input pokemon ID.". "</p>" ;
             }
+            if ($id<$row[0]) {
+            echo "<p class='message'>" ."Please input VALID pokemon ID. It should be larger than $row[0]". "</p>" ;
+            }
+            if (!is_int($id)) {
+            echo "<p class='message'>" ."Please input VALID pokemon ID. It should be a WHOLE number". "</p>" ;
+            }
             if ($type1 == "" ) {
             echo "<p class='message'>" ."Please input at least one pokemon type.". "</p>" ;
             }
             if ($url == "" ) {
             echo "<p class='message'>" ."Please input pokemon image url to make it prettier.". "</p>" ;
             }
-            echo "<a href=\"http://plato.cs.virginia.edu/~ss2cp/admin.php\">GO BACK</a>";
+            
+            echo "<a href=\"javascript:history.go(-1)\">GO BACK</a>";
         }
         else{
             $query = "INSERT INTO `cs4750s17csp9sm`.`pokemon` VALUES ('$id', '$name','$type1', '$type2','$url')";

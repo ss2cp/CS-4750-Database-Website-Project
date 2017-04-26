@@ -64,7 +64,7 @@
                 </div>
                 <label for="id" class="col-sm-2">ID</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" name="id" id="id" placeholder="The last ID is <?php echo $row[0]?>">
+                    <input type="text" class="form-control" name="id" id="id" placeholder="The last ID is <?php echo $row[0]+1?>">
                 </div>
             </div>
 
