@@ -66,7 +66,7 @@
                             echo "Failed to connect to MySQL: " . mysqli_connect_error();
                         }
 
-                        $query = "SELECT `nameGym`, `city`, `type`, `image` FROM `pokemon_gyms` 
+                        $query = "SELECT `nameGym`, `city`, `type`, `image`, `region` FROM `pokemon_gyms` 
                         #WHERE `dept_id` =  \"D00000\"";
                         $result = mysqli_query($conn, $query);
 
@@ -75,18 +75,21 @@
                             $city = $row["city"];
                             $type = $row["type"];
                             $imageURL = $row["image"];
+                            $region = $row["region"];
                             #$productURL = "./product_page.php"."?product_id=".$row["name"];     // used to create product page
 
                             echo "<div class=\"col-sm-4 col-lg-4 col-md-4\">
                                     <div class=\"thumbnail\">
                                         <img src=\"$imageURL\" alt=\"\" style=\"width: auto; height: 200px\" >
                                         <div class=\"text\">
-                                            <h4>$gymName</h4>
+                                            <h4>&nbsp;$gymName</h4>
                                         </div>
                                         <div class=\"caption\">
-                                            <h4>City: $city</h4>
+                                            <h7 class=\"pull-left\"><strong>City</strong>: $city</h7>
                                             <br>
-                                            <h4>Type: $type</h4>
+                                            <h7 class=\"pull-left\"><strong>Type</strong>: $type</h7>
+                                            <br/>
+                                            <h7 class=\"pull-left\"><strong>Region</strong>: $region</h7>
                                         </div>
                                     </div>
                                 </div>";

@@ -81,7 +81,7 @@
                                     <div class=\"thumbnail\">
                                         <img src=\"$imageURL\" alt=\"$name\" style=\"width: auto; height: 200px\" >
                                         <div class=\"text\">
-                                            <h3>$id - $name</h3>
+                                            <h3>&nbsp; $id - $name</h3>
                                         </div>
                                         <div class=\"caption\">
                                             <h4 class=\"pull-left\">Type: <a href=\"type.php\"> $type1 $type2 </a><br/><br/>Strength: $strength1
