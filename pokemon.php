@@ -86,7 +86,6 @@
                         {
                             echo "Failed to connect to MySQL: " . mysqli_connect_error();
                         }
-
                         //$query = "SELECT `id`, `name`, `image`, `type1`,`type2`,`strength` FROM `pokemon` INNER JOIN `pokemon_type_strength` ON (nameType = type1) GROUP BY 1";
                         $query = "
                         SELECT 
@@ -103,6 +102,7 @@
                         INNER JOIN pokemon_type_weakness AS pw on p.type1 = pw.nameType
                         INNER JOIN pokemon_evolution AS pe on p.id = pe.before_id GROUP BY p.id";
                         $result = mysqli_query($conn, $query);
+                        
 
 
 
