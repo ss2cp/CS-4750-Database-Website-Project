@@ -17,7 +17,8 @@
                         INNER JOIN pokemon_type_weakness AS pw on p.type1 = pw.nameType
                         INNER JOIN pokemon_evolution AS pe on p.id = pe.before_id  where `name` like ? GROUP BY p.id") or die(mysqli_error($db))) {
     $searchString = '%' . $_GET['searchPokemon'] . '%';
-    $stmt->bind_param(s, $searchString);
+    $s="";
+    $stmt->bind_param('s', $searchString);
     $stmt->execute();
     $stmt->bind_result($id, $name, $image, $type1,$type2,$strength,$weakness, $evolution);
     // echo "<table border=1><th>ID</th><th>Name</th><th>Type1</th><th>Type2</th><th>Image</th><th>Strength</th>\n";

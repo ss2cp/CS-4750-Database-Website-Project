@@ -1,6 +1,6 @@
 <!-- delete from r -->
 <?php
-   session_start();
+   // session_start();
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +45,7 @@
 
     $link=mysqli_connect($mysqlserver,$username,$password,$database) or die("Failed to connect to server !!");
 
-   $query3 = "SELECT MAX(id) FROM `pokemon`";
+    $query3 = "SELECT MAX(id) FROM `pokemon`";
     $result = mysqli_query($link,  $query3);
     $row = mysqli_fetch_row($result);
     
@@ -58,10 +58,8 @@
         // $type2=$_POST['type2'];
         // $url=$_POST['url'];
 
-        if ($id > $row ) {
-            if ($id!=$row) {
+        if($id == ""|| $id > $row[0]){
             echo "<p class='message'>" ."Please input VALID pokemon ID.". "</p>" ;
-            }
             
             echo "<a href=\"javascript:history.go(-1)\">GO BACK</a>";
         }

@@ -50,14 +50,12 @@
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
 
-    $query = "SELECT MAX(id) FROM `pokemon`";
-    $result = mysqli_query($link,  $query);
+    $query2= "SELECT MAX(id) FROM `pokemon`";
+    $result = mysqli_query($link,  $query2);
     $row = mysqli_fetch_row($result);
 
     /* free result set */
-    $result->close();
-
-    mysqli_close($link);
+    
 
     if(isset($_REQUEST['submit1']))
 
@@ -98,6 +96,9 @@
             echo "</Legend>";
         }
     }
+    $result->close();
+
+    mysqli_close($link);
 ?>
 
 </div>

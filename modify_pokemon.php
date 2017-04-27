@@ -43,6 +43,10 @@
 
     $link=mysqli_connect($mysqlserver,$username,$password,$database) or die("Failed to connect to server !!");
 
+  $query3 = "SELECT MAX(id) FROM `pokemon`";
+    $result = mysqli_query($link,  $query3);
+    $row = mysqli_fetch_row($result);
+    
     if(isset($_REQUEST['submit3']))
     {
         $errorMessage = "";
@@ -52,13 +56,10 @@
         $type2=$_POST['type23'];
         $url=$_POST['url3'];
 
-   $query3 = "SELECT MAX(id) FROM `pokemon`";
-    $result = mysqli_query($link,  $query3);
-    $row = mysqli_fetch_row($result);
-        if ($id > $row ) {
-            if ($id!=$row[0]+1) {
+ 
+
+        if($id == ""|| $id > $row[0]){
             echo "<p class='message'>" ."Please input VALID pokemon ID.". "</p>" ;
-            }
             
             echo "<a href=\"javascript:history.go(-1)\">GO BACK</a>";
         }
@@ -91,6 +92,9 @@
             echo "</Legend>";
         }
     }
+    $result->close();
+
+    mysqli_close($link);
 ?>
 
 </div>
