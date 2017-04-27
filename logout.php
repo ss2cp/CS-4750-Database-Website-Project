@@ -146,9 +146,6 @@
 
          </form>
 
-         <form action="./signup.php" target="_blank" action="">
-            <button class = "btn btn-lg btn-primary btn-block">Sign Up</button>
-         </form>
 
         </div>
       </div> 

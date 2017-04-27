@@ -85,7 +85,7 @@
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand" href="">PokemonDB</a>
+               <a class="navbar-brand" href="index.php">PokemonDB</a>
            </div>
          <!-- /.navbar-collapse -->
          </div>
@@ -143,9 +143,6 @@
 
          </form>
 
-         <form action="./signup.php" target="_blank" action="">
-            <button class = "btn btn-lg btn-primary btn-block">Sign Up</button>
-         </form>
 
         </div>
       </div> 
