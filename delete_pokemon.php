@@ -45,6 +45,10 @@
 
     $link=mysqli_connect($mysqlserver,$username,$password,$database) or die("Failed to connect to server !!");
 
+   $query3 = "SELECT MAX(id) FROM `pokemon`";
+    $result = mysqli_query($link,  $query3);
+    $row = mysqli_fetch_row($result);
+    
     if(isset($_REQUEST['submit2']))
     {
         $errorMessage = "";
@@ -54,9 +58,14 @@
         // $type2=$_POST['type2'];
         // $url=$_POST['url'];
 
-        if ($errorMessage != "" ) {
-            echo "<p class='message'>" .$errorMessage. "</p>" ;
+        if ($id > $row ) {
+            if ($id!=$row) {
+            echo "<p class='message'>" ."Please input VALID pokemon ID.". "</p>" ;
+            }
+            
+            echo "<a href=\"javascript:history.go(-1)\">GO BACK</a>";
         }
+
         else{
         	
 	        $query = "DELETE FROM `cs4750s17csp9sm`.`pokemon` WHERE `id` =('$id')";

@@ -107,7 +107,7 @@
                 </div>
                 <label for="id3" class="col-sm-2">ID</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" name="id3" id="id3" placeholder="The last ID is <?php echo $row[0]?>" pattern= "[0-9]" required>
+                    <input type="text" class="form-control" name="id3" id="id3" placeholder="The last ID is <?php echo $row[0]?>" pattern="\d+" required>
                 </div>
             </div>
 

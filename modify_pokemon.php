@@ -1,5 +1,5 @@
 <?php
-   session_start();
+   // session_start();
 ?>
 
 <!DOCTYPE html>
@@ -52,8 +52,15 @@
         $type2=$_POST['type23'];
         $url=$_POST['url3'];
 
-        if ($errorMessage != "" ) {
-            echo "<p class='message'>" .$errorMessage. "</p>" ;
+   $query3 = "SELECT MAX(id) FROM `pokemon`";
+    $result = mysqli_query($link,  $query3);
+    $row = mysqli_fetch_row($result);
+        if ($id > $row ) {
+            if ($id!=$row[0]+1) {
+            echo "<p class='message'>" ."Please input VALID pokemon ID.". "</p>" ;
+            }
+            
+            echo "<a href=\"javascript:history.go(-1)\">GO BACK</a>";
         }
         else{
             $query2 ="SELECT * FROM `cs4750s17csp9sm`.pokemon WHERE `id` =('$id')";
