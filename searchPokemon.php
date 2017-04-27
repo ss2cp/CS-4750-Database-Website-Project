@@ -21,7 +21,7 @@
     $s="";
     $stmt->bind_param('s', $searchString);
     $stmt->execute();
-    $stmt->bind_result($id, $name, $image, $type1,$type2,$strength,$weakness, $evolution);
+    $stmt->bind_result($id, $name, $image, $type1,$type2,$strength1,$weakness1, $evolution2);
     // echo "<table border=1><th>ID</th><th>Name</th><th>Type1</th><th>Type2</th><th>Image</th><th>Strength</th>\n";
     while($stmt->fetch()) {
       // echo "<tr><td>$id</td><td>$name</td><td>$type1</td><td>$type2</td><td>$image</td><td>$strength</td></tr>";
@@ -32,11 +32,15 @@
                             <h3>$id - $name</h3>
                         </div>
                         <div class=\"caption\">
-                            <h4 class=\"pull-left\">Type: <a href=\"type.php\"> $type1 $type2 </a><br/><br/>Strength: $strength
-                                <br/>Weakness: $weakness
-                                <br/>Next Evolution ID: $evolution
-                            </h4>
-                        </div>
+                            <h4 class=\"pull-left\">Type: <a href=\"type.php\"> $type1 $type2 </a><br/><br/>Strength: $strength1
+                                <br/>Weakness: $weakness1 
+                                ";
+                                if($evolution2 != null and $evolution2 != $id){
+                                    echo "<br/>Evolution: $evolution2";
+                                }
+                                echo
+                                "</h4>
+                            </div>
                     </div>
                 </div>";
     }
